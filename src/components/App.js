@@ -23,9 +23,8 @@ const jobList =  jobs.map((job) => {
 
     const param = e.target.name;
     const value = e.target.value;
-    //setPage(1)
-console.log(value);
-     //setParams({[param] : value});
+     setPage(1)
+
 
     setParams(prevParams => {
       return { ...prevParams, [param]: value } } ); 
