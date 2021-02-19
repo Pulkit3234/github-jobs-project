@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-Live Preview 
+Live Preview - 
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/75886411/108508658-255d9f00-72e2-11eb-8a27-e357d21a51dc.gif)
 
 ## Available Scripts
