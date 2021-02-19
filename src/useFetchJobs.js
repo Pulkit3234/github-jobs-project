@@ -31,7 +31,7 @@ const ACTIONS = {
   UPDATE_HAS_NEXT_PAGE: 'update-has-next-page'
 }
 
-const BASE_URL = "https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json";
+const BASE_URL = "https://jobs.github.com/positions.json";
 
  const useFetchJobs = (params, page) => {
   const [state, dispatch] = useReducer(reducer, { jobs: [], loading: true })
@@ -39,7 +39,7 @@ const BASE_URL = "https://cors-anywhere.herokuapp.com/https://jobs.github.com/po
   useEffect(() => {
     const cancelToken1 = axios.CancelToken.source()
     dispatch({ type: ACTIONS.MAKE_REQUEST })
-    axios.get(BASE_URL, {
+    axios.get('/positions.json', {
       cancelToken: cancelToken1.token,
       params: { markdown: true, page: page, ...params }
     }).then(res => {
@@ -50,7 +50,7 @@ const BASE_URL = "https://cors-anywhere.herokuapp.com/https://jobs.github.com/po
     })
 
     const cancelToken2 = axios.CancelToken.source()
-    axios.get(BASE_URL, {
+    axios.get('/positions.json', {
       cancelToken: cancelToken2.token,
       params: { markdown: true, page: page + 1, ...params }
     }).then(res => {
